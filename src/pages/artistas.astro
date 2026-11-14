@@ -1,0 +1,13 @@
+---
+// src/pages/artistas.astro
+import Layout from '../layouts/Layout.astro';
+import { ArtistSection } from '../components/ArtistSection';
+---
+
+<Layout
+  title="Artist's Alley & Cosmakers • FAPAR Online 2027"
+  description="Conheça e apoie ilustradores, cosmakers, artesãos e fotógrafos de Araras e região. Encomende props e artes o ano todo."
+  currentPath="/artistas"
+>
+  <ArtistSection client:load />
+</Layout>

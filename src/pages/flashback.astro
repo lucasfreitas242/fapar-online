@@ -1,0 +1,13 @@
+---
+// src/pages/flashback.astro
+import Layout from '../layouts/Layout.astro';
+import { FlashbackSection } from '../components/FlashbackSection';
+---
+
+<Layout
+  title="Galeria Flashback & Gerador de Stories • FAPAR Online 2027"
+  description="Reviva os registros oficiais do festival e gere cards fotográficos automáticos para o Instagram Stories com moldura oficial do Circuito FAPAR."
+  currentPath="/flashback"
+>
+  <FlashbackSection client:load />
+</Layout>

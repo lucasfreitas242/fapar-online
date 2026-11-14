@@ -1,0 +1,55 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
+import { DemoControlBar } from '../components/DemoControlBar';
+import { ToastContainer } from '../components/ui/ToastContainer';
+
+interface Props {
+  title?: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const {
+  title = 'FAPAR Online 2027 • Festival de Cultura Pop, Cosplay, K-pop e Games',
+  description = 'Portal oficial do FAPAR - Festival de Cultura Pop, Cosplay, K-pop e Games de Araras - SP. Circuito 2027 e comunidade online o ano todo.',
+  currentPath = '/',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="bg-[#09090B] text-zinc-100 min-h-screen flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+    <!-- Navbar Reativa (React Island) -->
+    <Navbar client:load currentPath={currentPath} />
+
+    <!-- Notificações Toast Flutuantes -->
+    <ToastContainer client:load />
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 w-full">
+      <slot />
+    </main>
+
+    <!-- Barra de Controle Demo Flutuante (React Island) -->
+    <DemoControlBar client:load />
+
+    <!-- Rodapé -->
+    <Footer />
+  </body>
+</html>

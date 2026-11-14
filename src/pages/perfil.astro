@@ -1,0 +1,13 @@
+---
+// src/pages/perfil.astro
+import Layout from '../layouts/Layout.astro';
+import { ProfileSection } from '../components/ProfileSection';
+---
+
+<Layout
+  title="Passaporte Digital & Arya Verse • FAPAR Online 2027"
+  description="Consulte seu nível de XP, histórico de transações, badges desbloqueadas e dispute a liderança do placar mensal da mascote Arya."
+  currentPath="/perfil"
+>
+  <ProfileSection client:load />
+</Layout>

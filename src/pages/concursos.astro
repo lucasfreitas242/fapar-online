@@ -1,0 +1,13 @@
+---
+// src/pages/concursos.astro
+import Layout from '../layouts/Layout.astro';
+import { ContestSection } from '../components/ContestSection';
+---
+
+<Layout
+  title="Concursos, Ranking & Votação • FAPAR Online 2027"
+  description="Acompanhe as notas do corpo de jurados, rankings detalhados de Cosplay e K-pop, e vote no Favorito do Público nas etapas ao vivo."
+  currentPath="/concursos"
+>
+  <ContestSection client:load />
+</Layout>
